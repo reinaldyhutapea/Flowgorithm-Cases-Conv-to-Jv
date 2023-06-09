@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Reinaldy Hutapea"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-01 09:02:16 PM"/>
+        <attribute name="created" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMi0wMTswMzoyMTozOSBQTTszODY5"/>
+        <attribute name="edited" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMi0wMTswOTowMjoxNiBQTTs2OzM5ODI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="palindrom" type="Boolean" array="False" size=""/>
+            <declare name="word" type="String" array="False" size=""/>
+            <input variable="word"/>
+            <assign variable="palindrom" expression="true"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt;= len(word)/2-1 and palindrom = true">
+                <if expression="char(word,i ) &lt;&gt; char(word, len(word)-i-1)">
+                    <then>
+                        <assign variable="palindrom" expression="false"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <if expression="palindrom = true">
+                <then>
+                    <output expression="&quot;YA&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;BUKAN&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Read" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+            <parameter name="word" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="word[i]"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

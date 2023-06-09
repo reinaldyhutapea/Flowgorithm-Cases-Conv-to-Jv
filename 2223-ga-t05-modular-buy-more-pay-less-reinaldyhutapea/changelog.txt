@@ -1,0 +1,6 @@
+Mencoba memanggil untuk yang pertamakalinya
+Mengganti nama variabel yang salah
+mengganti nama file
+Mencoba dengan program baru
+Mencoba mengganti loop while dengan do
+Mengganti fungsi Akhir menjadi Hasil

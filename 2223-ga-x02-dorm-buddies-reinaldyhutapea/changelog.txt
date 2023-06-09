@@ -1,0 +1,4 @@
+percobaan pertama
+percobaan kedua
+menggunakan looping  
+menggunakan fungsi

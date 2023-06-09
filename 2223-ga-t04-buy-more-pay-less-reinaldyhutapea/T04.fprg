@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Reinaldy Hutapea"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-28 05:53:39 PM"/>
+        <attribute name="created" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMC0yNzsxMDo0ODozMyBBTTszODYx"/>
+        <attribute name="edited" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMC0yODswNTo1MzowNCBQTTsxO1JlaW5hbGR5IEh1dGFwZWE7TEFQVE9QLUM3UjA5SUdDOzIwMjItMTAtMjc7MTA6NDg6MzMgQU07VDA0IGZpbmFsMS5mcHJnOzkyMjY="/>
+        <attribute name="edited" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMC0yODswNTo1MzozOSBQTTs3Nzs0MDUy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="isbn" type="String" array="True" size="3"/>
+            <declare name="price" type="Real" array="True" size="3"/>
+            <assign variable="price[0]" expression="0"/>
+            <assign variable="price[1]" expression="0"/>
+            <assign variable="price[2]" expression="0"/>
+            <declare name="buku0, buku1, buku2" type="String" array="False" size=""/>
+            <assign variable="buku0" expression="&quot;0&quot;"/>
+            <assign variable="buku1" expression="&quot;0&quot;"/>
+            <assign variable="buku2" expression="&quot;0&quot;"/>
+            <declare name="befprice" type="Real" array="True" size="3"/>
+            <assign variable="befprice[0]" expression="0"/>
+            <assign variable="befprice[1]" expression="0"/>
+            <assign variable="befprice[2]" expression="0"/>
+            <declare name="quantity" type="Integer" array="True" size="3"/>
+            <assign variable="quantity[0]" expression="0"/>
+            <assign variable="quantity[1]" expression="0"/>
+            <assign variable="quantity[2]" expression="0"/>
+            <declare name="totalharga" type="Real" array="False" size=""/>
+            <assign variable="totalharga" expression="0"/>
+            <declare name="quantity0, quantity1, quantity2, y" type="Integer" array="False" size=""/>
+            <assign variable="y" expression="0"/>
+            <assign variable="quantity0" expression="0"/>
+            <assign variable="quantity1" expression="0"/>
+            <assign variable="quantity2" expression="0"/>
+            <while expression="y&lt;=2">
+                <input variable="isbn[y]"/>
+                <if expression="isbn[y]!=&quot;---&quot;">
+                    <then>
+                        <if expression="isbn[y]=isbn[0]">
+                            <then>
+                                <assign variable="buku0" expression="isbn[y]"/>
+                                <assign variable="y" expression="0"/>
+                                <input variable="price[y]"/>
+                                <input variable="quantity[y]"/>
+                                <assign variable="quantity0" expression="quantity0 + quantity[y]"/>
+                                <assign variable="y" expression="y + 1"/>
+                            </then>
+                            <else>
+                                <assign variable="buku1" expression="isbn[y]"/>
+                                <if expression="isbn[y]=isbn[1]">
+                                    <then>
+                                        <assign variable="y" expression="1"/>
+                                        <input variable="price[y]"/>
+                                        <input variable="quantity[y]"/>
+                                        <assign variable="quantity1" expression="quantity1 + quantity[y]"/>
+                                        <assign variable="y" expression="y + 1"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="buku2" expression="isbn[y]"/>
+                                        <if expression="isbn[y]=isbn[2]">
+                                            <then>
+                                                <assign variable="y" expression="2"/>
+                                                <input variable="price[y]"/>
+                                                <input variable="quantity[y]"/>
+                                                <assign variable="quantity2" expression="quantity2 + quantity[y]"/>
+                                                <assign variable="y" expression="y + 1"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <assign variable="y" expression="3"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="quantity0&lt;=5">
+                <then>
+                    <assign variable="befprice[0]" expression="befprice[0] - befprice[0]*2/100"/>
+                </then>
+                <else>
+                    <if expression="quantity0&lt;=10">
+                        <then>
+                            <assign variable="befprice[0]" expression="befprice[0] - befprice[0]*5/100"/>
+                        </then>
+                        <else>
+                            <if expression="quantity0&lt;=20">
+                                <then>
+                                    <assign variable="befprice[0]" expression="befprice[0] - befprice[0]*12/100"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="befprice[0]" expression="befprice[0]*quantity0"/>
+            <if expression="quantity1 &gt;= 20">
+                <then>
+                    <assign variable="befprice[1]" expression="befprice[1]-befprice[1]*12/100"/>
+                </then>
+                <else>
+                    <if expression="quantity1&gt;=10">
+                        <then>
+                            <assign variable="befprice[1]" expression="befprice[1]-befprice[1]*5/100"/>
+                        </then>
+                        <else>
+                            <if expression="quantity1&gt;=5">
+                                <then>
+                                    <assign variable="befprice[1]" expression="befprice[1]-befprice[1]*2/100"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="befprice[1]" expression="befprice[1]*quantity1"/>
+            <if expression="quantity2 &gt;= 20">
+                <then>
+                    <assign variable="befprice[2]" expression="befprice[2]-befprice[2]*12/100"/>
+                </then>
+                <else>
+                    <if expression="quantity2 &gt;=10">
+                        <then>
+                            <assign variable="befprice[2]" expression="befprice[2]-befprice[2]*5/100"/>
+                        </then>
+                        <else>
+                            <if expression="quantity2&gt;=5">
+                                <then>
+                                    <assign variable="befprice[2]" expression="befprice[2]-befprice[2]*2/100"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="befprice[2]" expression="befprice[2]*quantity2"/>
+            <assign variable="totalharga" expression="befprice[0] + befprice[1] + befprice[2]"/>
+            <output expression="tofixed(totalharga, 2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

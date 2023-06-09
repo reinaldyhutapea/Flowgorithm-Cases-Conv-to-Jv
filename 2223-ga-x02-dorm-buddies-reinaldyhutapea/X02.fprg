@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Reinaldy Hutapea"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-12 02:15:25 PM"/>
+        <attribute name="created" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMi0xMTswODo1MDo0NyBQTTszODc2"/>
+        <attribute name="edited" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMi0xMjswMjoxNToyNSBQTTs4OzM5ODM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <assign variable="x" expression="4"/>
+            <declare name="nama" type="String" array="True" size="x"/>
+            <call expression="declare"/>
+            <call expression="inputan(nama, x)"/>
+            <call expression="output(nama, x)"/>
+        </body>
+    </function>
+    <function name="declare" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+    <function name="inputan" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <for variable="x" start="0" end="3" direction="inc" step="1">
+                <input variable="nama[x]"/>
+                <if expression="nama[x]!=&quot;---&quot;">
+                    <then/>
+                    <else>
+                        <assign variable="x" expression="4"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="output" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <for variable="x" start="0" end="3" direction="inc" step="1">
+                <if expression="nama[x]!= &quot;---&quot;">
+                    <then>
+                        <output expression="nama[x]" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="x" expression="4"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

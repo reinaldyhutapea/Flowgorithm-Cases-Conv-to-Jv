@@ -1,0 +1,9 @@
+Telah mengerjakan ujian
+Revisi ujian 1 dengan meninisalisasi e 
+Revisi e menjadi hasil
+Revisi input hasil menjadi assign 
+Coba lagi
+Revisi 4 menggunakan while
+Revisi selanjutnya menghapus salah satu fungsi if-else 
+Mencoba kembali
+MENGULANG

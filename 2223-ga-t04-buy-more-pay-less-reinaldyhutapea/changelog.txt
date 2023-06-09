@@ -1,0 +1,20 @@
+Sudah selesai mengerjakan tugas T04
+Mengulangi Tugas T04
+Menambah Tugas T04
+Menambah if else selanjutnya
+mengganti urutan if else dari nilai tertinggi ke terendah
+mengulang kembali if else karena tidak ada perubahan
+mengganti beberapa >= menjadi <= pada eksamplar
+mencoba kembali
+Menghapus salah satu fungsi false
+menambah assignmemperbaiki kesalahan pada y=0
+
+Menghapus beberapa fungsi
+MENGGANTI <= MENJADI >=
+menghapus beberapa assign
+mengganti beberapa perbandingan
+Mengulang kembali
+Merubah quantyty0
+mengubah beberapa fungsi yang salah
+MENCOBA COBA
+Mengulangi

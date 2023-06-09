@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Reinaldy Hutapea"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-01 03:04:42 PM"/>
+        <attribute name="created" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMi0wMTsxMTo0ODo1NiBBTTszODYx"/>
+        <attribute name="edited" value="UmVpbmFsZHkgSHV0YXBlYTtMQVBUT1AtQzdSMDlJR0M7MjAyMi0xMi0wMTswMzowNDo0MiBQTTsyOzM5NzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="word" type="String" array="False" size=""/>
+            <input variable="word"/>
+            <output expression="strings(word)" newline="True"/>
+        </body>
+    </function>
+    <function name="strings" type="String" variable="out">
+        <parameters>
+            <parameter name="word" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="s, n" type="Integer" array="False" size=""/>
+            <declare name="out" type="String" array="False" size=""/>
+            <assign variable="s" expression="Len(word)"/>
+            <assign variable="s" expression="s-1"/>
+            <assign variable="n" expression="0"/>
+            <if expression="Char(word, s)==Char(word, 0)">
+                <then>
+                    <assign variable="out" expression="substrings(word, n)"/>
+                </then>
+                <else>
+                    <assign variable="out" expression="&quot;BUKAN&quot;"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="substrings" type="String" variable="subout">
+        <parameters>
+            <parameter name="word" type="String" array="False"/>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <declare name="subout" type="String" array="False" size=""/>
+            <assign variable="s" expression="Len(word)"/>
+            <assign variable="s" expression="s-1"/>
+            <assign variable="subout" expression="&quot;&quot;"/>
+            <if expression="Char(word, s-n) == Char(word, n)">
+                <then>
+                    <if expression="s-n=n">
+                        <then>
+                            <assign variable="subout" expression="&quot;YA&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="s-n=n+1">
+                                <then>
+                                    <assign variable="subout" expression="&quot;YA&quot;"/>
+                                </then>
+                                <else>
+                                    <assign variable="n" expression="n+1"/>
+                                    <assign variable="subout" expression="substrings(word, n)"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="subout" expression="&quot;BUKAN&quot;"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
